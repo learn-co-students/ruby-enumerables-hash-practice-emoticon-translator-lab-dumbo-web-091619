@@ -10,7 +10,7 @@ def load_library(file_path)
     new_hash[:get_emoticon].store(value[0],value[1])
   end
   
- new_hash
+ puts new_hash
   
 end
 
@@ -21,23 +21,13 @@ def get_japanese_emoticon(file_path, emoticon)
   
   emoticons.each do |key,value|
     if key == emoticon
-      return value
+      puts value
     end
   end
-  
-  return "Sorry, that emoticon was not found"
 end
 
-def get_english_meaning(file_path, emoticon)
-  loaded = load_library(file_path)
-
-  meaning = loaded[:get_meaning]
-  
-  meaning.each do |key,value|
-    if key == emoticon
-      return value
-    end
-  end
-  
-  return "Sorry, that emoticon was not found"
+def get_english_meaning
+  # code goes here
 end
+
+load_library("./lib/emoticons.yml")
